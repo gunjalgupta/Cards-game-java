@@ -2,7 +2,7 @@ package org.example.core;
 
 interface ICard extends Comparable{
     
-    int compareTo(ICard c1, ICard c2);
+    int compareTo(ICard c1);
 
     
 }

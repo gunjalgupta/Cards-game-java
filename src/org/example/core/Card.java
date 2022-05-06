@@ -1,9 +1,9 @@
 package org.example.core;
 
-public class Card implements Comparable{
-    private String suite; // access modifier changed to private to implement encapsulation
+public class Card implements ICard{
+    private Suite suite; // access modifier changed to private to implement encapsulation
     private int value;
-    public Card(int value, String suite) {
+    public Card(int value,  Suite suite) {
         this.suite = suite;
         this.value = value;
     }
@@ -33,4 +33,18 @@ public class Card implements Comparable{
         }
         return 0;
     }
+
+    @Override
+    public int compareTo(ICard c1) {
+        // TODO Auto-generated method stub
+        Card c= (Card)c1;
+        if(this.value > c.getValue()){
+            return 1;
+        } else if(this.value == c.getValue()) {
+            return 0;
+        } else {
+            return -1;
+        }
+    }
+
 }

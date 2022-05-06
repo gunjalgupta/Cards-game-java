@@ -1,6 +1,6 @@
 package org.example.core;
 
-public class Game implements AutoCloseable {
+public class Game implements AutoCloseable, IGame {
     private static Game instance; // data memebers on top for readability
     private Deck deck;
 
@@ -30,10 +30,10 @@ public class Game implements AutoCloseable {
         return c1;
     }
 
-    private int findWinner(Card[] card) {
+    public int findWinner( ICard[] card) {
         
         int winner = 0;
-        Card maxcard = card[0];
+        ICard maxcard = card[0];
         // System.out.println(0 + ": maxcard:" + card[0].getValue() );
         for(int c=1; c<card.length; c++) {
             // System.out.println(c + ": maxcard:" + card[c].getValue() );
@@ -73,5 +73,6 @@ public class Game implements AutoCloseable {
         }
     }
             return instance;
-    } 
+    }
+
 }
